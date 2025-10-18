@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { readFile, writeFile, access } from 'fs/promises'
+import { writeFile, access } from 'fs/promises'
 import { createInterface } from 'readline'
 import { exec } from 'child_process'
 import { promisify } from 'util'
