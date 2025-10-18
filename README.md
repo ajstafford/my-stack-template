@@ -12,6 +12,7 @@ A modern, production-ready Next.js starter template with Supabase authentication
 - **Database & Auth:** [Supabase](https://supabase.com)
 - **Forms:** [React Hook Form](https://react-hook-form.com) + [Zod](https://zod.dev)
 - **Icons:** [Lucide React](https://lucide.dev)
+- **Analytics:** [Vercel Analytics](https://vercel.com/docs/analytics)
 - **Build Tool:** [Turbopack](https://turbo.build/pack)
 
 ## 🎯 Features
@@ -23,6 +24,7 @@ A modern, production-ready Next.js starter template with Supabase authentication
 - ✅ **Supabase** integration for authentication and database
 - ✅ **shadcn/ui** components pre-configured
 - ✅ **Type-safe** forms with React Hook Form and Zod validation
+- ✅ **Vercel Analytics** for web analytics tracking
 - ✅ **ESLint** configured with Next.js best practices
 - ✅ **Path aliases** (`@/*`) for clean imports
 - ✅ **Turbopack** for lightning-fast builds
