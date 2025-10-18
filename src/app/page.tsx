@@ -1,102 +1,216 @@
-import Image from "next/image";
+import Link from "next/link"
+import { ArrowRight, Code2, Database, Lock, Palette, Zap } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { createClient } from "@/lib/supabase/server"
 
-export default function Home() {
+export default async function Home() {
+  const supabase = await createClient()
+  const { data: { user } } = await supabase.auth.getUser()
+
+  const features = [
+    {
+      icon: Zap,
+      title: "Next.js 15 + React 19",
+      description: "Built with the latest Next.js App Router and React 19 features for optimal performance.",
+    },
+    {
+      icon: Database,
+      title: "Supabase Integration",
+      description: "Pre-configured authentication and database client with SSR support.",
+    },
+    {
+      icon: Palette,
+      title: "shadcn/ui Components",
+      description: "Beautiful, accessible UI components with Tailwind CSS 4 and dark mode support.",
+    },
+    {
+      icon: Lock,
+      title: "Auth Ready",
+      description: "Complete authentication flow with login, signup, and protected routes.",
+    },
+    {
+      icon: Code2,
+      title: "TypeScript",
+      description: "Fully typed codebase with strict TypeScript configuration for safety.",
+    },
+    {
+      icon: Zap,
+      title: "Turbopack",
+      description: "Lightning-fast development builds with Turbopack bundler.",
+    },
+  ]
+
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="flex flex-col min-h-screen">
+      {/* Header */}
+      <header className="border-b">
+        <div className="container flex h-16 items-center justify-between px-4">
+          <div className="flex items-center gap-2">
+            <Code2 className="h-6 w-6" />
+            <span className="font-bold text-xl">My Stack Template</span>
+          </div>
+          <nav className="flex items-center gap-4">
+            {user ? (
+              <>
+                <Link href="/dashboard">
+                  <Button variant="ghost">Dashboard</Button>
+                </Link>
+                <form action="/auth/signout" method="post">
+                  <Button variant="outline" type="submit">Sign out</Button>
+                </form>
+              </>
+            ) : (
+              <>
+                <Link href="/login">
+                  <Button variant="ghost">Sign in</Button>
+                </Link>
+                <Link href="/signup">
+                  <Button>Get Started</Button>
+                </Link>
+              </>
+            )}
+          </nav>
         </div>
+      </header>
+
+      {/* Hero Section */}
+      <main className="flex-1">
+        <section className="container px-4 py-24 md:py-32">
+          <div className="flex flex-col items-center text-center space-y-8">
+            <div className="space-y-4 max-w-3xl">
+              <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
+                Build faster with a{" "}
+                <span className="text-primary">modern stack</span>
+              </h1>
+              <p className="text-xl text-muted-foreground md:text-2xl max-w-2xl mx-auto">
+                A production-ready Next.js template with authentication, database, and beautiful UI components.
+              </p>
+            </div>
+
+            <div className="flex flex-col sm:flex-row gap-4">
+              {user ? (
+                <Link href="/dashboard">
+                  <Button size="lg" className="text-lg">
+                    Go to Dashboard
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                </Link>
+              ) : (
+                <>
+                  <Link href="/signup">
+                    <Button size="lg" className="text-lg">
+                      Get Started
+                      <ArrowRight className="ml-2 h-5 w-5" />
+                    </Button>
+                  </Link>
+                  <Link href="https://github.com/ajstafford/my-stack-template" target="_blank">
+                    <Button size="lg" variant="outline" className="text-lg">
+                      View on GitHub
+                    </Button>
+                  </Link>
+                </>
+              )}
+            </div>
+
+            {/* Tech Stack Pills */}
+            <div className="flex flex-wrap justify-center gap-2 pt-8">
+              {["Next.js 15", "React 19", "TypeScript", "Tailwind CSS 4", "Supabase", "shadcn/ui"].map((tech) => (
+                <div
+                  key={tech}
+                  className="px-3 py-1 rounded-full bg-secondary text-secondary-foreground text-sm font-medium"
+                >
+                  {tech}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Features Section */}
+        <section className="container px-4 py-16 md:py-24 bg-muted/50">
+          <div className="space-y-8">
+            <div className="text-center space-y-4">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
+                Everything you need
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                Start building immediately with a complete, modern development stack
+              </p>
+            </div>
+
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 pt-8">
+              {features.map((feature) => {
+                const Icon = feature.icon
+                return (
+                  <Card key={feature.title}>
+                    <CardHeader>
+                      <Icon className="h-10 w-10 mb-2 text-primary" />
+                      <CardTitle>{feature.title}</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <CardDescription className="text-base">
+                        {feature.description}
+                      </CardDescription>
+                    </CardContent>
+                  </Card>
+                )
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section */}
+        <section className="container px-4 py-16 md:py-24">
+          <Card className="max-w-3xl mx-auto">
+            <CardHeader className="text-center space-y-4">
+              <CardTitle className="text-3xl">Ready to build?</CardTitle>
+              <CardDescription className="text-lg">
+                Get started in minutes with authentication, database, and UI components ready to go.
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="flex flex-col sm:flex-row gap-4 justify-center">
+              {!user && (
+                <Link href="/signup">
+                  <Button size="lg">
+                    Create an Account
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                </Link>
+              )}
+              <Link href="https://github.com/ajstafford/my-stack-template#readme" target="_blank">
+                <Button size="lg" variant="outline">
+                  Read the Docs
+                </Button>
+              </Link>
+            </CardContent>
+          </Card>
+        </section>
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+
+      {/* Footer */}
+      <footer className="border-t py-8">
+        <div className="container px-4">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <div className="flex items-center gap-2">
+              <Code2 className="h-5 w-5" />
+              <span className="text-sm text-muted-foreground">
+                Built with Next.js, Supabase, and shadcn/ui
+              </span>
+            </div>
+            <div className="flex gap-6 text-sm text-muted-foreground">
+              <Link href="https://github.com/ajstafford/my-stack-template" className="hover:text-foreground">
+                GitHub
+              </Link>
+              <Link href="https://nextjs.org/docs" className="hover:text-foreground">
+                Next.js Docs
+              </Link>
+              <Link href="https://supabase.com/docs" className="hover:text-foreground">
+                Supabase Docs
+              </Link>
+            </div>
+          </div>
+        </div>
       </footer>
     </div>
   );
