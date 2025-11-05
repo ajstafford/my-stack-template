@@ -1,6 +1,28 @@
 {
   "name": "my-stack-template",
   "version": "0.1.0",
+  "description": "A modern, production-ready Next.js starter template with Supabase authentication, shadcn/ui components, and TypeScript",
+  "author": "Andy Stafford",
+  "license": "MIT",
+  "keywords": [
+    "nextjs",
+    "react",
+    "typescript",
+    "supabase",
+    "shadcn-ui",
+    "tailwindcss",
+    "starter-template",
+    "boilerplate",
+    "full-stack"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ajstafford/my-stack-template.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ajstafford/my-stack-template/issues"
+  },
+  "homepage": "https://github.com/ajstafford/my-stack-template#readme",
   "private": true,
   "scripts": {
     "setup": "node scripts/setup.js",

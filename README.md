@@ -1,6 +1,32 @@
 # My Stack Template 🚀
 
-A modern, production-ready Next.js starter template with Supabase authentication, shadcn/ui components, and TypeScript.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+[![Next.js](https://img.shields.io/badge/Next.js-15-black)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19-blue)](https://react.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-38bdf8)](https://tailwindcss.com/)
+
+A modern, production-ready Next.js starter template with Supabase authentication, shadcn/ui components, and TypeScript. Perfect for bootstrapping your next web application with best practices and modern tooling.
+
+> **Note:** This project was developed with AI assistance using [Claude Code](https://claude.com/claude-code), Anthropic's official CLI tool for AI-powered software development.
+
+## 📋 Table of Contents
+
+- [Tech Stack](#-tech-stack)
+- [Features](#-features)
+- [Screenshots](#-screenshots)
+- [Project Structure](#-project-structure)
+- [Getting Started](#-getting-started)
+- [Available Scripts](#-available-scripts)
+- [Adding UI Components](#-adding-ui-components)
+- [Supabase Usage](#-supabase-usage)
+- [Customization](#-customization)
+- [Learn More](#-learn-more)
+- [Deployment](#-deployment)
+- [Contributing](#-contributing)
+- [Security](#-security)
+- [License](#-license)
+- [Code of Conduct](#-code-of-conduct)
 
 ## ✨ Tech Stack
 
@@ -28,6 +54,16 @@ A modern, production-ready Next.js starter template with Supabase authentication
 - ✅ **ESLint** configured with Next.js best practices
 - ✅ **Path aliases** (`@/*`) for clean imports
 - ✅ **Turbopack** for lightning-fast builds
+
+## 📸 Screenshots
+
+> Add screenshots of your application here to showcase the UI and features.
+
+<!-- Example:
+![Home Page](./docs/screenshots/home.png)
+![Dashboard](./docs/screenshots/dashboard.png)
+![Dark Mode](./docs/screenshots/dark-mode.png)
+-->
 
 ## 📦 Project Structure
 
@@ -63,7 +99,7 @@ my-stack-template/
 
 ```bash
 # Clone this template (or use as template on GitHub)
-git clone https://github.com/yourusername/my-stack-template.git
+git clone https://github.com/ajstafford/my-stack-template.git
 cd my-stack-template
 
 # Install dependencies
@@ -186,7 +222,7 @@ Modify `components.json` to customize the component library style and behavior.
 
 The easiest way to deploy:
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/yourusername/my-stack-template)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/ajstafford/my-stack-template)
 
 Or manually:
 
@@ -207,13 +243,40 @@ This is a standard Next.js app and can be deployed to any platform that supports
 - [Railway](https://railway.app)
 - [DigitalOcean](https://www.digitalocean.com/products/app-platform)
 
-## 📄 License
-
-MIT License - feel free to use this template for any project!
-
 ## 🤝 Contributing
 
-Contributions, issues, and feature requests are welcome!
+Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
+
+See [CONTRIBUTING.md](./CONTRIBUTING.md) for detailed guidelines on how to contribute to this project.
+
+## 🔒 Security
+
+Security is a top priority for this project. If you discover a security vulnerability, please follow our responsible disclosure process.
+
+See [SECURITY.md](./SECURITY.md) for information on:
+- Reporting vulnerabilities
+- Security best practices
+- Supported versions
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- This project was developed with AI assistance using [Claude Code](https://claude.com/claude-code)
+- Built with amazing open-source technologies: Next.js, React, Supabase, shadcn/ui, and Tailwind CSS
+- Thanks to all the contributors and maintainers of the dependencies used in this project
+
+## 📜 Code of Conduct
+
+This project adheres to a Code of Conduct that all contributors are expected to follow. Please read [CODE_OF_CONDUCT.md](./CODE_OF_CONDUCT.md) to understand what behavior is expected and what will not be tolerated.
+
+We are committed to providing a welcoming and inspiring community for all.
+
+## ⭐ Star History
+
+If you find this template useful, please consider giving it a star on GitHub!
 
 ---
 
