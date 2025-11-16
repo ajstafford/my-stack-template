@@ -1,8 +1,8 @@
 # My Stack Template 🚀
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
-[![Next.js](https://img.shields.io/badge/Next.js-15-black)](https://nextjs.org/)
-[![React](https://img.shields.io/badge/React-19-blue)](https://react.dev/)
+[![Next.js](https://img.shields.io/badge/Next.js-16-black)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19.2-blue)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-38bdf8)](https://tailwindcss.com/)
 
@@ -30,26 +30,26 @@ A modern, production-ready Next.js starter template with Supabase authentication
 
 ## ✨ Tech Stack
 
-- **Framework:** [Next.js 15](https://nextjs.org) (App Router)
-- **React:** [React 19](https://react.dev)
+- **Framework:** [Next.js 16](https://nextjs.org) (App Router)
+- **React:** [React 19.2](https://react.dev)
 - **Language:** [TypeScript 5](https://www.typescriptlang.org)
 - **Styling:** [Tailwind CSS 4](https://tailwindcss.com)
 - **UI Components:** [shadcn/ui](https://ui.shadcn.com)
 - **Database & Auth:** [Supabase](https://supabase.com)
-- **Forms:** [React Hook Form](https://react-hook-form.com) + [Zod](https://zod.dev)
+- **Forms:** [React Hook Form](https://react-hook-form.com) + [Zod v4](https://zod.dev)
 - **Icons:** [Lucide React](https://lucide.dev)
 - **Analytics:** [Vercel Analytics](https://vercel.com/docs/analytics)
 - **Build Tool:** [Turbopack](https://turbo.build/pack)
 
 ## 🎯 Features
 
-- ✅ **Next.js 15** with App Router and Server Components
-- ✅ **React 19** with latest features
+- ✅ **Next.js 16** with App Router and Server Components
+- ✅ **React 19.2** with latest features
 - ✅ **Tailwind CSS 4** with CSS variables theming
 - ✅ **Dark mode** support out of the box
 - ✅ **Supabase** integration for authentication and database
 - ✅ **shadcn/ui** components pre-configured
-- ✅ **Type-safe** forms with React Hook Form and Zod validation
+- ✅ **Type-safe** forms with React Hook Form and Zod v4 validation
 - ✅ **Vercel Analytics** for web analytics tracking
 - ✅ **ESLint** configured with Next.js best practices
 - ✅ **Path aliases** (`@/*`) for clean imports
@@ -92,7 +92,7 @@ my-stack-template/
 
 ### Prerequisites
 
-- Node.js 20+ installed
+- Node.js 24+ installed
 - A Supabase account ([sign up free](https://supabase.com))
 
 ### 1. Clone and Install
@@ -280,4 +280,4 @@ If you find this template useful, please consider giving it a star on GitHub!
 
 ---
 
-**Built with ❤️ using Next.js 15, React 19, and Supabase**
+**Built with ❤️ using Next.js 16, React 19.2, and Supabase**
